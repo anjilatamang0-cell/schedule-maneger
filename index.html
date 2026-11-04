@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スケジュール管理アプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="lang">
+      <button type="button" id="btnJa" class="lang-btn">日本語</button>
+      <button type="button" id="btnEn" class="lang-btn">EN</button>
+    </div>
+
+    <h1 data-i18n="title"></h1>
+
+    <section class="card">
+      <h2 data-i18n="formTitle"></h2>
+      <form id="form">
+        <label><span data-i18n="labelTitle"></span>
+          <input type="text" id="titleInput" data-ph="phTitle"></label>
+        <label><span data-i18n="labelDate"></span>
+          <input type="date" id="dateInput" required></label>
+        <div class="row">
+          <label><span data-i18n="labelStart"></span>
+            <input type="time" id="startInput" required></label>
+          <label><span data-i18n="labelEnd"></span>
+            <input type="time" id="endInput" required></label>
+        </div>
+        <label><span data-i18n="labelCat"></span>
+          <select id="catInput">
+            <option value="study" data-i18n="study"></option>
+            <option value="work" data-i18n="work"></option>
+            <option value="private" data-i18n="private"></option>
+          </select></label>
+        <p id="message"></p>
+        <button type="submit" id="saveBtn" class="main-btn"></button>
+        <button type="button" id="cancelBtn" class="sub-btn" data-i18n="cancel" hidden></button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="viewTitle"></h2>
+      <input type="date" id="viewDate">
+      <input type="text" id="searchInput" data-ph="phSearch">
+      <ul id="list"></ul>
+      <p id="emptyMsg" data-i18n="empty" hidden></p>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
